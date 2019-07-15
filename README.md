@@ -1,4 +1,4 @@
 # Sparse-to-Continuous
-IROS 2019 "Sparse-to-Continuous: Enhancing Monocular Depth Estimation using Occupancy Maps"
+ICAR 2019 "Sparse-to-Continuous: Enhancing Monocular Depth Estimation using Occupancy Maps"
 
-In Construction!
+The code will be uploaded upon acceptance!
