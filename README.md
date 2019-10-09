@@ -8,7 +8,7 @@ This is the reference Tensorflow implementation for training and testing depth e
 
 
 
-This code is for non-commercial use; please see the [license file](https://github.com/nianticlabs/monodepth2/blob/master/LICENSE) for terms.
+This code is for non-commercial use; please see the [license file](https://github.com/nicolasrosa/Sparse-to-Continuous/blob/master/LICENSE) for terms.
 
 If you find our work useful in your research please consider citing our paper:
 
