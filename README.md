@@ -4,7 +4,7 @@ This is the reference Tensorflow implementation for training and testing depth e
 
 > [ICAR 2019 "Sparse-to-Continuous: Enhancing Monocular Depth Estimation using Occupancy Maps"](https://arxiv.org/abs/1809.09061)
 >
-> [Nícolas Rosa](https://dblp.org/pid/198/1985), [Vitor Guizilini](https://dblp.org/pid/81/7230), [Valdir Grassi Jr](https://dblp.org/pid/93/4528)
+> [Nícolas dos Santos Rosa](https://dblp.org/pid/198/1985), [Vitor Guizilini](https://dblp.org/pid/81/7230), [Valdir Grassi Jr](https://dblp.org/pid/93/4528)
 
 
 
