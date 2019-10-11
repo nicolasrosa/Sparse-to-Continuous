@@ -46,9 +46,16 @@ This code is for non-commercial use. For more information, please see the [licen
 
 ## 2.1 Youtube
 ### 2.1.1 Real-Time Depth Map Inference
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FIJg-S9MjI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Real-Time Monocular Depth Estimation using ResNet (OpenCV)](https://img.youtube.com/vi/FIJg-S9MjI4/0.jpg)](https://www.youtube.com/watch?v=FIJg-S9MjI4 "Real-Time Monocular Depth Estimation using ResNet (OpenCV)")
+
+
+
 ### 2.1.2 Real-Time Pointcloud Interence
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RUhZ2nLrSFg?start=4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[![Point Cloud based on Monocular Depth Estimation Network Predictions](https://img.youtube.com/vi/RUhZ2nLrSFg/0.jpg)](https://www.youtube.com/watch?v=RUhZ2nLrSFg "Point Cloud based on Monocular Depth Estimation Network Predictions")
+
+
+
 ## 2.2 System Specifications
 
 | Library    | Version           |
