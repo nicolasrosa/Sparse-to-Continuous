@@ -6,6 +6,8 @@ This is the reference Tensorflow implementation for training and testing depth e
 >
 > [Nícolas dos Santos Rosa](https://dblp.org/pid/198/1985), [Vitor Guizilini](https://dblp.org/pid/81/7230), [Valdir Grassi Jr](https://dblp.org/pid/93/4528)
 
+
+
 **Citation**
 
 If you find our work useful in your research please consider citing our paper:
@@ -19,6 +21,8 @@ If you find our work useful in your research please consider citing our paper:
 }
 ```
 
+
+
 **DISCLAIMER**
 
 This repository was originally forked from [iro-cp/FCRN-DepthPrediction](https://github.com/iro-cp/FCRN-DepthPrediction). We developed all the code in Tersonflow for the training step, alongside several modifications for allowing the code to handle different datasets like `ApolloScape`, `KITTI`, `NYUDepth`, and another features which were not available on the original repository. 
@@ -29,25 +33,23 @@ This code is for non-commercial use. For more information, please see the [licen
 
 
 
-
-
-# Densification Framework (Hilbert Maps)
-
-<span style="color:red">Apontar pro 18 FPS</span>
+# 1 Densification Framework (Hilbert Maps)
 
 **TODO:**
 
 - [ ] Describe the commands to compile the CVPP Framework
 - [ ] Describe the commands to generate the continuous depth maps
 
-# Depth Estimation Framework (FCRN)
 
-## Real-Time Depth Map Inference
+
+# 2 Depth Estimation Framework (FCRN)
+
+## 2.1 Youtube
+### 2.1.1 Real-Time Depth Map Inference
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FIJg-S9MjI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-## Real-Time Pointcloud Interence
+### 2.1.2 Real-Time Pointcloud Interence
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RUhZ2nLrSFg?start=4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-# System Specifications
+## 2.2 System Specifications
 
 | Library    | Version           |
 | ---------- | ----------------- |
@@ -62,7 +64,8 @@ This code is for non-commercial use. For more information, please see the [licen
 | NVIDIA Geforce Titan X (12Gb) | <span style="color:red">40 FPS</span> |
 
 
-# Framework Description
+
+## 2.3 Framework Description
 
 `--debug`, enables the Debug Mode. Default= `False`
 
@@ -75,7 +78,7 @@ This code is for non-commercial use. For more information, please see the [licen
 
 
 
-##  1. Training  #
+###  2.3.1 Training
 
 **Arguments and flags descriptions:**
 
@@ -116,27 +119,15 @@ python3 predict_nick.py --machine nicolas -m train --gpu 0 -s kitti_continuous -
 
 
 
-### TensorBoard
+#### TensorBoard
 
 ```shell
-tensorboard --logdir=MEGA/workspace/FCRN-DepthPrediction/tensorflow/output/fcrn/apolloscape
-```
-```shell
-tensorboard --logdir=MEGA/workspace/FCRN-DepthPrediction/tensorflow/output/fcrn/kitti_depth
-```
-```shell
-tensorboard --logdir=MEGA/workspace/FCRN-DepthPrediction/tensorflow/output/fcrn/kitti_discrete
-```
-```shell
-tensorboard --logdir=MEGA/workspace/FCRN-DepthPrediction/tensorflow/output/fcrn/kitti_continuous
-```
-```shell
-tensorboard --logdir=MEGA/workspace/FCRN-DepthPrediction/tensorflow/output/fcrn/nyudepth
+$ cd tensorflow
+$ tensorboard --logdir=tensorflow/output/fcrn/
 ```
 
 
-
-## 2. Testing/Evaluation
+###  2.3.2 Testing/Evaluation
 
 **Arguments and flags descriptions:**
 
@@ -150,7 +141,7 @@ The `--test_split` flag allows you to choose which dataset you want to test on.
 * `eigen_kitti_depth` corresponds to the 652 test images used by [Aleotti arXiv 2018](http://vision.deis.unibo.it/~ftosi/papers/monoGan.pdf) and uses ground truth semi-dense annotated depth images.
 
 `--test_file_path`, evaluates the model for the speficied images from a test_file`--debug', action='store_true', help="Enables the Debug Mode", default=False)
-.txt file. Default= `''`
+.txt file. Default=''`
 
 `--min_depth`, specifies the minimum depth for evaluation. Default= `1e-3`
 `--max_depth`, specifies the maximum depth for evaluation'. Default= `80`
@@ -187,7 +178,7 @@ python3 predict_nick.py -m test --gpu 0 -s kitti_continuous --eval_tool monodept
 
 
 
-## 3. Predict (Single Image Prediction)
+###  2.3.3 Predict (Single Image Prediction)
 
 **Arguments and flags descriptions:**
 
@@ -197,12 +188,12 @@ python3 predict_nick.py -m test --gpu 0 -s kitti_continuous --eval_tool monodept
 **Command line:**
 
 ```shell
-python3 predict_nick.py -m pred --gpu 0 -r ../models/NYU_FCRN-checkpoint/NYU_FCRN.ckpt -i ../misc/nyu_example.png 
+python3 predict_nick.py -m pred --gpu 0 -r <path to model/model.ckpt> -i ../misc/nyu_example.png 
 ```
 
 
 
-## 4. Real-Time Prediction using OpenCV:
+### 2.3.4 Real-Time Prediction using OpenCV:
 
    **Run a specific model:**
 
@@ -259,8 +250,8 @@ python3 predict_nick.py -m pred --gpu 0 -r ../models/NYU_FCRN-checkpoint/NYU_FCR
 
 
 
-# Third-Party Evaluation Code
-## 1. KITTI Depth Prediction Dataset's Evaluation tool
+# 3 Third-Party Evaluation Code
+## 3.1 KITTI Depth Prediction Dataset's Evaluation tool
 
 **Dependencies:**
 
@@ -291,7 +282,7 @@ wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/lib
 
 
 
-## 2. Monodepth's Evaluation Code
+## 3.2 Monodepth's Evaluation Code
 
 Monodepth Evaluation Code:
 
@@ -302,13 +293,6 @@ To evaluate run:
 python utils/evaluate_kitti.py --split kitti --predicted_disp_path ~/tmp/my_model/disparities.npy \
 --gt_path ~/data/KITTI/
 ```
-
-
-## 3. A-jahani's Evaluation Code
-
-https://github.com/a-jahani/semodepth/blob/master/eval/eval_kitti.py
-
-
 
 
 
