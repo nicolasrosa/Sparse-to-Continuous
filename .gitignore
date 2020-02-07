@@ -7,6 +7,7 @@ tensorflow/output/*
 tensorflow/tmp/*
 tensorflow/htmlcov/*
 tensorflow_tmp/*
+__pycache__
 
 # Exceptions
 !catkin_ws/src/
