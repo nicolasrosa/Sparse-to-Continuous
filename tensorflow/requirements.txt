@@ -128,7 +128,7 @@ PyWavelets==1.0.1
 pyxattr==0.6.0
 pyxdg==0.25
 pyxhook==1.0.0
-PyYAML==3.13
+PyYAML==5.1
 pyzmq==17.1.2
 qt-dotgraph==0.3.11
 qt-gui==0.3.11
