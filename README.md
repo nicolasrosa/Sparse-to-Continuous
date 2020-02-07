@@ -31,7 +31,7 @@ month={Dec},}
 
 **DISCLAIMER**
 
-This repository was originally forked from [iro-cp/FCRN-DepthPrediction](https://github.com/iro-cp/FCRN-DepthPrediction). We developed all the code in Tensorflow for the training step, alongside several modifications for allowing the code to handle different datasets like `ApolloScape`, `KITTI`, `NYUDepth`, and another features which were not available on the original repository. 
+This repository was originally forked from [iro-cp/FCRN-DepthPrediction](https://github.com/iro-cp/FCRN-DepthPrediction). We developed all the code in Tensorflow for the training step, alongside several modifications for allowing the code to handle different datasets like `ApolloScape`, `KITTI`, `NYUDepth`, and other features that were not available on the original repository. 
 
 We used and preserved the network proposed by Laina et al. (2016) presented in the "Deeper Depth Prediction with Fully Convolutional Residual Networks (FCRN)" article. **All rights reserved to them**.
 
@@ -52,7 +52,7 @@ This code is for non-commercial use. For more information, please see the [licen
 
 ## 2.1 Youtube Videos
 
-| Real-Time Depth Map Inference                                | Real-Time Pointcloud Interence                               |
+| Real-Time Depth Map Inference                                | Real-Time Pointcloud Inference                               |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [![Real-Time Monocular Depth Estimation using ResNet (OpenCV)](https://img.youtube.com/vi/FIJg-S9MjI4/0.jpg)](https://www.youtube.com/watch?v=FIJg-S9MjI4 "Real-Time Monocular Depth Estimation using ResNet (OpenCV)") | [![Point Cloud based on Monocular Depth Estimation Network Predictions](https://img.youtube.com/vi/RUhZ2nLrSFg/0.jpg)](https://www.youtube.com/watch?v=RUhZ2nLrSFg "Point Cloud based on Monocular Depth Estimation Network Predictions") |
 
