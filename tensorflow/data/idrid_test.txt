@@ -1,0 +1,11 @@
+image/48.jpg	gt_png2/48.png
+image/49.jpg	gt_png2/49.png
+image/23.jpg	gt_png2/23.png
+image/13.jpg	gt_png2/13.png
+image/45.jpg	gt_png2/45.png
+image/2.jpg	gt_png2/2.png
+image/39.jpg	gt_png2/39.png
+image/34.jpg	gt_png2/34.png
+image/19.jpg	gt_png2/19.png
+image/44.jpg	gt_png2/44.png
+image/15.jpg	gt_png2/15.png

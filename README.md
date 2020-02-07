@@ -2,7 +2,7 @@
 
 This is the reference Tensorflow implementation for training and testing depth estimation models using the method described in
 
-> [ICAR 2019 "Sparse-to-Continuous: Enhancing Monocular Depth Estimation using Occupancy Maps"](https://arxiv.org/abs/1809.09061)
+> [ICAR 2019 "Sparse-to-Continuous: Enhancing Monocular Depth Estimation using Occupancy Maps"](https://ieeexplore.ieee.org/document/8981652/authors#authors)
 >
 > [Nícolas dos Santos Rosa](https://dblp.org/pid/198/1985), [Vitor Guizilini](https://dblp.org/pid/81/7230), [Valdir Grassi Jr](https://dblp.org/pid/93/4528)
 
@@ -13,19 +13,25 @@ This is the reference Tensorflow implementation for training and testing depth e
 If you find our work useful in your research please consider citing our paper:
 
 ```
-@article{rosa2018sparse,
-  title={Sparse-to-Continuous: Enhancing Monocular Depth Estimation using Occupancy Maps},
-  author={Rosa, N{\'\i}colas and Guizilini, Vitor and Grassi Jr, Valdir},
-  journal={arXiv preprint arXiv:1809.09061},
-  year={2018}
-}
+@INPROCEEDINGS{8981652, 
+author={N. d. S. {Rosa} and V. {Guizilini} and V. {Grassi}}, 
+booktitle={2019 19th International Conference on Advanced Robotics (ICAR)}, 
+title={Sparse-to-Continuous: Enhancing Monocular Depth Estimation using Occupancy Maps}, 
+year={2019}, 
+volume={}, 
+number={}, 
+pages={793-800}, 
+keywords={}, 
+doi={10.1109/ICAR46387.2019.8981652}, 
+ISSN={null}, 
+month={Dec},}
 ```
 
 
 
 **DISCLAIMER**
 
-This repository was originally forked from [iro-cp/FCRN-DepthPrediction](https://github.com/iro-cp/FCRN-DepthPrediction). We developed all the code in Tersonflow for the training step, alongside several modifications for allowing the code to handle different datasets like `ApolloScape`, `KITTI`, `NYUDepth`, and another features which were not available on the original repository. 
+This repository was originally forked from [iro-cp/FCRN-DepthPrediction](https://github.com/iro-cp/FCRN-DepthPrediction). We developed all the code in Tensorflow for the training step, alongside several modifications for allowing the code to handle different datasets like `ApolloScape`, `KITTI`, `NYUDepth`, and another features which were not available on the original repository. 
 
 We used and preserved the network proposed by Laina et al. (2016) presented in the "Deeper Depth Prediction with Fully Convolutional Residual Networks (FCRN)" article. **All rights reserved to them**.
 
@@ -44,15 +50,11 @@ This code is for non-commercial use. For more information, please see the [licen
 
 # 2 Depth Estimation Framework (FCRN)
 
-## 2.1 Youtube
-### 2.1.1 Real-Time Depth Map Inference
-[![Real-Time Monocular Depth Estimation using ResNet (OpenCV)](https://img.youtube.com/vi/FIJg-S9MjI4/0.jpg)](https://www.youtube.com/watch?v=FIJg-S9MjI4 "Real-Time Monocular Depth Estimation using ResNet (OpenCV)")
+## 2.1 Youtube Videos
 
-
-
-### 2.1.2 Real-Time Pointcloud Interence
-
-[![Point Cloud based on Monocular Depth Estimation Network Predictions](https://img.youtube.com/vi/RUhZ2nLrSFg/0.jpg)](https://www.youtube.com/watch?v=RUhZ2nLrSFg "Point Cloud based on Monocular Depth Estimation Network Predictions")
+| Real-Time Depth Map Inference                                | Real-Time Pointcloud Interence                               |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [![Real-Time Monocular Depth Estimation using ResNet (OpenCV)](https://img.youtube.com/vi/FIJg-S9MjI4/0.jpg)](https://www.youtube.com/watch?v=FIJg-S9MjI4 "Real-Time Monocular Depth Estimation using ResNet (OpenCV)") | [![Point Cloud based on Monocular Depth Estimation Network Predictions](https://img.youtube.com/vi/RUhZ2nLrSFg/0.jpg)](https://www.youtube.com/watch?v=RUhZ2nLrSFg "Point Cloud based on Monocular Depth Estimation Network Predictions") |
 
 
 
@@ -65,10 +67,10 @@ This code is for non-commercial use. For more information, please see the [licen
 | Python     | 3.6.8             |
 | Ubuntu     | 18.04             |
 
-| GPU                           | Inference Time                        |
-| ----------------------------- | ------------------------------------- |
-| NVIDIA GeForce 1050 TI (4Gb)  | <span style="color:red">18 FPS</span> |
-| NVIDIA Geforce Titan X (12Gb) | <span style="color:red">40 FPS</span> |
+| GPU                           | Inference Time |
+| ----------------------------- | -------------- |
+| NVIDIA GeForce 1050 TI (4Gb)  | 18 FPS         |
+| NVIDIA Geforce Titan X (12Gb) | 40 FPS         |
 
 
 
@@ -121,7 +123,7 @@ This code is for non-commercial use. For more information, please see the [licen
 **Command line:**
 
 ```shell
-python3 predict_nick.py --machine nicolas -m train --gpu 0 -s kitti_continuous --px valid --loss berhu --max_steps 300000 -l 1e-4 -d 0.5 --ldecay --l2norm --data_aug --remove_sky -t -v
+$ python3 predict_nick.py --machine nicolas -m train --gpu 0 -s kitti_continuous --px valid --loss berhu --max_steps 300000 -l 1e-4 -d 0.5 --ldecay --l2norm --data_aug --remove_sky -t -v
 ```
 
 
@@ -164,7 +166,7 @@ The `--test_split` flag allows you to choose which dataset you want to test on.
 **Command line, when selecting a desired trained model:**
 
 ```shell
-python3 predict_nick.py --machine nicolas -m test --gpu 0 -s kitti_continuous -r output/fcrn/2018-02-26_17-08-45/restore/model.fcrn --eval_tool monodepth --test_split eigen_kitti_depth -u
+$ python3 predict_nick.py --machine nicolas -m test --gpu 0 -s kitti_continuous -r output/fcrn/2018-02-26_17-08-45/restore/model.fcrn --eval_tool monodepth --test_split eigen_kitti_depth -u
 ```
 
 
@@ -172,7 +174,7 @@ python3 predict_nick.py --machine nicolas -m test --gpu 0 -s kitti_continuous -r
 **Using official evaluation tool from KITTI Depth Prediction Dataset:**
 
 ```shell
-python3 predict_nick.py -m test --gpu 0 -s kitti_continuous --eval_tool kitti_depth --test_split eigen_kitti_depth -u
+$ python3 predict_nick.py -m test --gpu 0 -s kitti_continuous --eval_tool kitti_depth --test_split eigen_kitti_depth -u
 ```
 
 
@@ -180,7 +182,7 @@ python3 predict_nick.py -m test --gpu 0 -s kitti_continuous --eval_tool kitti_de
 **Using Monodepth's evaluation code:**
 
 ```shell
-python3 predict_nick.py -m test --gpu 0 -s kitti_continuous --eval_tool monodepth --test_split eigen_kitti_depth -u
+$ python3 predict_nick.py -m test --gpu 0 -s kitti_continuous --eval_tool monodepth --test_split eigen_kitti_depth -u
 ```
 
 
@@ -195,7 +197,7 @@ python3 predict_nick.py -m test --gpu 0 -s kitti_continuous --eval_tool monodept
 **Command line:**
 
 ```shell
-python3 predict_nick.py -m pred --gpu 0 -r <path to model/model.ckpt> -i ../misc/nyu_example.png 
+$ python3 predict_nick.py -m pred --gpu 0 -r <path to model/model.ckpt> -i ../misc/nyu_example.png 
 ```
 
 
@@ -205,11 +207,11 @@ python3 predict_nick.py -m pred --gpu 0 -r <path to model/model.ckpt> -i ../misc
    **Run a specific model:**
 
    ```shell
-   python3 predict_cv.py -r ../models/NYU_FCRN-checkpoint/NYU_FCRN.ckpt -i ../misc/drone_indoor.mp4
+$ python3 predict_cv.py -r ../models/NYU_FCRN-checkpoint/NYU_FCRN.ckpt -i ../misc/drone_indoor.mp4
    ```
 
    ```shell
-   python3 predict_cv.py -r output/fcrn/kitti_continuous/all_px/berhu/2018-06-29_17-59-58/restore/model.fcrn ../misc/outdoor_dubai_city.mp4
+$ python3 predict_cv.py -r output/fcrn/kitti_continuous/all_px/berhu/2018-06-29_17-59-58/restore/model.fcrn ../misc/outdoor_dubai_city.mp4
    ```
 
    
@@ -217,8 +219,8 @@ python3 predict_nick.py -m pred --gpu 0 -r <path to model/model.ckpt> -i ../misc
    **Detects and lists the available models:**
 
    ```shell
-   python3 predict_cv.py -i ../misc/indoor_drone.mp4 --gpu 0
-   python3 predict_cv.py -i ../misc/outdoor_dubai_city.mp4 --gpu 0
+$ python3 predict_cv.py -i ../misc/indoor_drone.mp4 --gpu 0
+$ python3 predict_cv.py -i ../misc/outdoor_dubai_city.mp4 --gpu 0
    ```
 
    
@@ -226,31 +228,31 @@ python3 predict_nick.py -m pred --gpu 0 -r <path to model/model.ckpt> -i ../misc
    **Encode Video:**
 
    ```shell
-   ffmpeg -r 30 -f image2 -s 304x288 -i frame%06d.png -i pred%06d.png -vcodec libx264 -crf 25  -pix_fmt yuv420p ../test.mp4
+$ ffmpeg -r 30 -f image2 -s 304x288 -i frame%06d.png -i pred%06d.png -vcodec libx264 -crf 25  -pix_fmt yuv420p ../test.mp4
    ```
 
    
 
    **Dependencies:**
 
-   1.1) Gstreamer:
+   1.1) `Gstreamer`:
 
    ```shell
-   sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools
+$ sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools
    ```
 
-   1.2) ffmpeg:
+   1.2) `ffmpeg`:
 
    ```shell
-   sudo apt install ffmpeg
+$ sudo apt install ffmpeg
    ```
 
    1.3) Grant access to user for using video devices:
 
    ```shell
-   grep video /etc/group
-   sudo usermod -a -G video olorin
-   sudo chmod 777 /dev/video0
+$ grep video /etc/group
+$ sudo usermod -a -G video olorin
+$ sudo chmod 777 /dev/video0
    ```
 
   
@@ -263,20 +265,20 @@ python3 predict_nick.py -m pred --gpu 0 -r <path to model/model.ckpt> -i ../misc
 **Dependencies:**
 
 ```shell
-sudo apt-get install libpng++-dev
+$ sudo apt-get install libpng++-dev
 ```
 
 **Compilation:**
 
 ```shell
-cd /media/nicolas/nicolas_seagate/datasets/kitti/depth/depth_prediction/depth_devkit/devkit/cpp
+$ cd /media/nicolas/nicolas_seagate/datasets/kitti/depth/depth_prediction/depth_devkit/devkit/cpp
 sh make.sh
 ```
 
 **Run:**
 
 ```shell
-./evaluation/kitti_depth_prediction_devkit/cpp/evaluate_depth output/tmp/gt/ output/tmp/pred/
+$ ./evaluation/kitti_depth_prediction_devkit/cpp/evaluate_depth output/tmp/gt/ output/tmp/pred/
 ```
 
 **Fixes**
@@ -284,7 +286,7 @@ sh make.sh
 1. [Ubuntu 17.04 libpng12.so.0: cannot open shared object file #95](https://github.com/tcoopman/image-webpack-loader/issues/95)
 
 ```shell
-wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb   && sudo dpkg -i /tmp/libpng12.deb   && rm /tmp/libpng12.deb
+$ wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb   && sudo dpkg -i /tmp/libpng12.deb   && rm /tmp/libpng12.deb
 ```
 
 
@@ -297,7 +299,7 @@ Monodepth Evaluation Code:
 
 To evaluate run:  
 ```shell
-python utils/evaluate_kitti.py --split kitti --predicted_disp_path ~/tmp/my_model/disparities.npy \
+$ python utils/evaluate_kitti.py --split kitti --predicted_disp_path ~/tmp/my_model/disparities.npy \
 --gt_path ~/data/KITTI/
 ```
 
@@ -306,8 +308,8 @@ python utils/evaluate_kitti.py --split kitti --predicted_disp_path ~/tmp/my_mode
 # TODO
 
 - [ ] Upload code
-- [ ] Add Youtube Videos
+- [x] Add Youtube Videos
 - [ ] Write README.md with framework descriptions
 - [ ] Change arXiv link to official link
-- [ ] Change bibtex for the official citation
+- [x] Change bibtex for the official citation
 
