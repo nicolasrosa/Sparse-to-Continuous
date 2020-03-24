@@ -307,9 +307,10 @@ $ python utils/evaluate_kitti.py --split kitti --predicted_disp_path ~/tmp/my_mo
 
 # TODO
 
-- [ ] Upload code
+- [x] Upload code
 - [x] Add Youtube Videos
-- [ ] Write README.md with framework descriptions
+- [x] Write README.md with framework descriptions
 - [ ] Change arXiv link to official link
 - [x] Change bibtex for the official citation
 
+- [ ] Describle the steps for the `Densification Framework`
