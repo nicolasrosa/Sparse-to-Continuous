@@ -5,7 +5,7 @@ apturl==0.5.2
 asn1crypto==0.24.0
 astor==0.7.1
 backcall==0.1.0
-bleach==3.1.0
+bleach==3.3.0
 bondpy==1.8.3
 boto==2.49.0
 boto3==1.9.96
