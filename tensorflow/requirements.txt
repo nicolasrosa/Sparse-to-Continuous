@@ -92,7 +92,7 @@ nbformat==4.4.0
 netifaces==0.10.4
 networkx==2.2
 nltk==3.4
-notebook==5.7.4
+notebook==6.4.10
 numexpr==2.6.4
 numpy==1.16.1
 oauth==1.0.1
