@@ -87,7 +87,7 @@ MarkupSafe==1.0
 matplotlib==3.0.2
 message-filters==1.14.3
 mistune==0.8.4
-nbconvert==5.4.0
+nbconvert==6.5.1
 nbformat==4.4.0
 netifaces==0.10.4
 networkx==2.2
