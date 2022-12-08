@@ -15,7 +15,7 @@ bz2file==0.98
 camera-calibration==1.12.23
 camera-calibration-parsers==1.11.13
 catkin==0.7.14
-certifi==2018.11.29
+certifi==2022.12.7
 chardet==3.0.4
 ck==1.9.6
 cloudpickle==0.8.0
